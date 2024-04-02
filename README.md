@@ -20,6 +20,6 @@ Also if you are using images create a directory named 'images' since it assumes 
 
 ## Configuring
 just read the `config.txt`. Its self explaning. But dont put a file extension on the imagePath and only use png's
-
+Also remove the .example from it
 
 

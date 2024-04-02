@@ -51,7 +51,7 @@ def send_message(event=None):
 
 def get_response(message):
     try:
-        response = ollama.chat(model='llama2-uncensored', messages=[{'role': 'user', 'content': message}])
+        response = ollama.chat(model=config['model'], messages=[{'role': 'user', 'content': message}])
         return response['message']['content']
     except Exception as e:
         print("Error:", e)
@@ -69,7 +69,7 @@ if config['image'] == 'true':
     panel.pack(side="left", fill="both", expand="no")
 
 # Display a message in the chat window when the program starts
-initial_message = f"\n---------- DEBUG ----------\nConnected To Ollama Server. Running Version {config['version']}. Model: {config['model']}"
+initial_message = f"\n---------- DEBUG ----------\nConnected To Ollama Server.\nRunning Version {config['version']}. Model: {config['model']}"
 chat_display = scrolledtext.ScrolledText(root, wrap=WORD, width=40, height=15, state='normal')
 if config['debug']:
     chat_display.insert(END, "Programm: " + initial_message + "\n")

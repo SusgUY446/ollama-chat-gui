@@ -3,3 +3,4 @@
 *.jpeg
 venv/
 conversation*.txt
+config.txt
