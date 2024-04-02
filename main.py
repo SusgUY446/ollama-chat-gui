@@ -37,7 +37,7 @@ def send_message(event=None):
         response = get_response(message)
         chat_display.configure(state='normal')  # Enable editing
         chat_display.insert(END, "You: " + message + "\n")
-        chat_display.insert(END, "Waifu: " + response + "\n")
+        chat_display.insert(END, f"{config['name']}: " + response + "\n")
         chat_display.configure(state='disabled')  # Disable editing
         entry.delete(0, END)  # Clear the entry field
 
@@ -64,7 +64,7 @@ if config['image'] == 'true':
 initial_message = f"\n---------- DEBUG ----------\nConnected To Ollama Server. Running Version {config['version']}"
 chat_display = scrolledtext.ScrolledText(root, wrap=WORD, width=40, height=15, state='normal')
 if config['debug']:
-    chat_display.insert(END, "Bot: " + initial_message + "\n")
+    chat_display.insert(END, "Programm: " + initial_message + "\n")
 chat_display.configure(state='disabled')  # Disable editing
 chat_display.pack(padx=10, pady=10)
 

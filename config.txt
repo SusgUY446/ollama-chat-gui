@@ -1,5 +1,6 @@
-version = 1.1
+version = 1.2
 title = Ollama Chat GUI
+name = Bot
 debug = True
 image = true
 imagePath = moe-4
