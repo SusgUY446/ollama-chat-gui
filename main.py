@@ -26,6 +26,11 @@ for line in lines:
 print(config)
 
 
+def save_conversation():
+    conversation = chat_display.get("1.0", END)
+    with open("conversation.txt", "w") as file:
+        file.write(conversation)
+    messagebox.showinfo("Save Conversation", "Conversation saved successfully.")
 
 
 
@@ -61,7 +66,7 @@ if config['image'] == 'true':
     panel.pack(side="left", fill="both", expand="no")
 
 # Display a message in the chat window when the program starts
-initial_message = f"\n---------- DEBUG ----------\nConnected To Ollama Server. Running Version {config['version']}"
+initial_message = f"\n---------- DEBUG ----------\nConnected To Ollama Server. Running Version {config['version']}. Model: {config['model']}"
 chat_display = scrolledtext.ScrolledText(root, wrap=WORD, width=40, height=15, state='normal')
 if config['debug']:
     chat_display.insert(END, "Programm: " + initial_message + "\n")
@@ -72,6 +77,8 @@ chat_display.pack(padx=10, pady=10)
 entry = Entry(root, width=40)
 entry.pack(pady=5)
 
+save_button = Button(root, text="Save Conversation", command=save_conversation)
+save_button.pack(pady=5)
 # Create a button to send messages
 send_button = Button(root, text="Send", command=send_message)
 send_button.pack(pady=5)
