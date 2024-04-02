@@ -51,7 +51,7 @@ def get_response(message):
 
 # Create the main window
 root = Tk()
-root.title("Ollama GUI Chat")
+root.title(config['title'])
 
 # Load and display the initial image
 print(str(config['image']))
