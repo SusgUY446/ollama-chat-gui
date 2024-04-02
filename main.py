@@ -80,11 +80,13 @@ chat_display.pack(padx=10, pady=10)
 entry = Entry(root, width=40)
 entry.pack(pady=5)
 
-save_button = Button(root, text="Save Conversation", command=save_conversation)
-save_button.pack(pady=5)
+
 # Create a button to send messages
 send_button = Button(root, text="Send", command=send_message)
 send_button.pack(pady=5)
+
+save_button = Button(root, text="Save Conversation", command=save_conversation)
+save_button.pack(pady=5)
 
 # Bind the Enter key to the send_message function
 entry.bind("<Return>", send_message)

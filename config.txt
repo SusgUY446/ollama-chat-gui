@@ -1,4 +1,4 @@
-version = 1.4
+version = 1.4.1
 title = Ollama Chat GUI
 name = Bot
 debug = True
