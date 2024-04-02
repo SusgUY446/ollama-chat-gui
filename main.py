@@ -61,6 +61,28 @@ def get_response(message):
 root = Tk()
 root.title(config['title'])
 
+
+
+# Creating menu bar
+menubar = Menu(root)
+root.config(menu=menubar)
+
+file_menu = Menu(menubar, tearoff=False)
+
+file_menu.add_command(
+    label='Save Conversation',
+    command=save_conversation
+)
+file_menu.add_command(
+    label='Exit',
+    command=root.destroy
+)
+
+
+menubar.add_cascade(
+    label="File",
+    menu=file_menu
+)
 # Load and display the initial image
 print(str(config['image']))
 if config['image'] == 'true':
@@ -85,8 +107,6 @@ entry.pack(pady=5)
 send_button = Button(root, text="Send", command=send_message)
 send_button.pack(pady=5)
 
-save_button = Button(root, text="Save Conversation", command=save_conversation)
-save_button.pack(pady=5)
 
 # Bind the Enter key to the send_message function
 entry.bind("<Return>", send_message)
