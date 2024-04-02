@@ -2,6 +2,9 @@ from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import scrolledtext, messagebox
 import ollama
+from datetime import datetime
+
+
 
 # Open and read the contents of the config.txt file
 with open('config.txt', 'r') as file:
@@ -28,7 +31,7 @@ print(config)
 
 def save_conversation():
     conversation = chat_display.get("1.0", END)
-    with open("conversation.txt", "w") as file:
+    with open(f"conversations/conversation{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.txt", "w") as file:
         file.write(conversation)
     messagebox.showinfo("Save Conversation", "Conversation saved successfully.")
 

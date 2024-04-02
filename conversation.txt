@@ -1,6 +1,0 @@
-Programm: 
----------- DEBUG ----------
-Connected To Ollama Server. Running Version 1.2. Model: llama2-uncensored
-You: hi
-Bot: Hi, how can I help you?
-
