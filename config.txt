@@ -1,0 +1,5 @@
+version = 1.0
+debug = True
+image = true
+imagePath = moe-4
+model = llama2-uncensored
