@@ -32,7 +32,7 @@ if config['debug'] == 'true':
 ##########################################################
 def save_conversation():
     conversation = chat_display.get("1.0", END)
-    with open(f"conversations/conversation{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.txt", "w") as file:
+    with open(f"conversations/conversation{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt", "w") as file:
         file.write(conversation)
     messagebox.showinfo("Save Conversation", "Conversation saved successfully.")
 
@@ -47,12 +47,14 @@ def clear_conversation():
 def send_message(event=None):
     message = entry.get()
     if message:
+        entry.delete(0, END)
+        
         response = get_response(message)        
         chat_display.configure(state='normal')  
         chat_display.insert(END, "You: " + message + "\n")
         chat_display.insert(END, f"{config['name']}: " + response + "\n")
         chat_display.configure(state='disabled')  
-        entry.delete(0, END)  
+
 def get_response(message):
     try:
         response = ollama.chat(model=config['model'], messages=[{'role': 'user', 'content': message}])

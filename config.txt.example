@@ -1,7 +1,7 @@
-version = 1.4.2
+version = 1.5.2
 title = Ollama Chat GUI
 name = Bot
 debug = True
-image = true
+image = false
 imagePath = example
 model = llama2-uncensored

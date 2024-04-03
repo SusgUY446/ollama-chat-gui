@@ -1,7 +1,7 @@
-version = 1.4.2
+version = 1.5.1
 title = Ollama Chat GUI
 name = 100% Real Human
 debug = true
-image = true
+image = false
 imagePath = moe-4
 model = llama2-uncensored
