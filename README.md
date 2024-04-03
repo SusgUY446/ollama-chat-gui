@@ -2,8 +2,9 @@
 
 A gui for ollama. 
 
-Image Mode:
+Image Mode:<br>
 ![image mode](.github/pictures/image_mode.png "Title")<br><br>
+Compact Mode:<br>
 ![compact mode](.github/pictures/compact.png "Title")<br><br>
 <br><br>
 Default model: llama2-uncensored
